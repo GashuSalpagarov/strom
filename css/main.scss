@@ -1,0 +1,58 @@
+@keyframes lum{
+    from{text-shadow: 0px 0px 0px rgba(178, 16, 16, .2)}
+    50%{text-shadow: 0px 0px 20px rgba(178, 16, 16, 1)}
+    to{text-shadow: 0px 0px 0px rgba(178, 16, 16, .2)}
+}
+body{
+    background-color: #ececec;
+}
+.header{
+    background-color: #fff;
+
+    &-wrap{
+        height: 50px;
+        display: flex;
+        max-width: 1140px;
+        justify-content: space-between;
+        margin: 0 auto;
+        align-items: center;
+    }
+    &-logo{
+        font-size: 24px;
+       
+        a{
+            text-decoration: none;
+            color: #000;
+            transition: 0.5s;
+            &:hover{
+                animation: lum 2s infinite ;
+                color: #b21010;
+            }
+        }
+    }
+    &-nav{
+        width: 70%;
+
+        ul{
+            display: flex;
+            justify-content: flex-end;
+
+
+            li:not(:last-child){
+                    padding-right: 20px;
+            }
+
+            a{
+                transition: 0.5s;
+                &:hover{
+                    animation: lum 2s infinite ;
+                    color: #b21010;
+                }
+                text-transform: lowercase;
+                text-decoration: none;
+                color: #000;
+                font-size: 18px;
+            }
+        }
+    }
+}
