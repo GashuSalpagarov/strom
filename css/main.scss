@@ -1,16 +1,21 @@
-@keyframes lum{
-    from{text-shadow: 0px 0px 0px rgba(178, 16, 16, .2)}
-    50%{text-shadow: 0px 0px 20px rgba(178, 16, 16, 1)}
-    to{text-shadow: 0px 0px 0px rgba(178, 16, 16, .2)}
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
+*{
+    box-sizing: border-box;
 }
 body{
     background-color: #ececec;
+    font-family: 'Shadows Into Light', cursive;
+}
+.container{
+    max-width: 1140px;
+    margin: 0 auto;
 }
 .header{
     background-color: #fff;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, .5);
 
     &-wrap{
-        height: 50px;
+        height: 38px;
         display: flex;
         max-width: 1140px;
         justify-content: space-between;
@@ -18,15 +23,15 @@ body{
         align-items: center;
     }
     &-logo{
-        font-size: 24px;
+        font-size: 40px;
+        padding-left: 40px;
        
         a{
             text-decoration: none;
             color: #000;
-            transition: 0.5s;
             &:hover{
-                animation: lum 2s infinite ;
-                color: #b21010;
+                color: #850707fa;
+                font-weight: bold;
             }
         }
     }
@@ -36,23 +41,118 @@ body{
         ul{
             display: flex;
             justify-content: flex-end;
-
-
-            li:not(:last-child){
-                    padding-right: 20px;
+            li{
+                padding-right: 20px;
             }
-
             a{
-                transition: 0.5s;
                 &:hover{
-                    animation: lum 2s infinite ;
-                    color: #b21010;
+                    color: #0317af;
+                    font-weight: bold;
                 }
                 text-transform: lowercase;
                 text-decoration: none;
                 color: #000;
-                font-size: 18px;
+                font-size: 24px;
             }
         }
     }
+}
+.calculator{
+    &__block{
+        box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.5);
+        margin: 50px 100px;
+        height: 500px;
+        width: 500px;
+        border-radius: 5px;
+        background-color: #fff;
+        padding: 10px;
+    }
+    &__display{
+        input{
+            width: 100%;
+            border: 1px solid;
+            height: 150px;
+            background-color: #ececec;
+            font-size: 100px;
+            padding: 0px 10px 12px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            text-align: right;
+            font-family: 'Shadows Into Light', cursive;
+        }
+    }
+    &__operations{
+        &--top{
+            display: flex;
+            width: 100%;
+            margin-bottom: 10px;
+            justify-content: space-between;
+            .calculator__operation{
+                cursor: pointer;
+                font-size: 30px;
+                padding-top: 5px;
+                text-align: center;
+                width: 75px;
+                &:hover{
+                    font-weight: bold;
+                }
+                &:nth-child(1){
+                   &:hover{
+                    background: #b306063d;
+                   } 
+                }
+            }  
+        }
+        &--side{
+            .calculator__operation{
+                padding: 0;
+                margin-bottom: 10px;
+                font-size: 50px;
+                text-align: center;
+                width: 95px;
+                height: 60px;
+                &:hover{
+                    cursor: pointer;
+                    font-weight: bold;
+                }
+            &:nth-child(3){
+                font-size: 100px;
+                    margin: 0;
+                    height: 130px;
+                }
+            }
+        }
+    }
+    &__operation{
+        width: 50px;
+        height: 40px;
+        display: inline-block;
+        border: 1px solid gray;
+        border-radius: 5px;
+    }
+    &__numbers{
+        width: 385px;
+        float: left;
+        height: 100%;
+        display: inline-block;
+    }
+    &__number{
+        cursor: pointer;
+        &:hover{
+            font-weight: bold;
+        }
+        width: 120px;
+        font-size: 25px;
+        font-size: 60px;
+        height: 60px;
+        text-align: center;
+        margin-bottom: 10px;
+        display: inline-block;
+        border: 1px solid gray;
+        border-radius: 5px;
+        &:nth-child(10){
+            width: 248px;
+        }
+    }
+
 }

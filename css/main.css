@@ -1,37 +1,27 @@
-@-webkit-keyframes lum {
-  from {
-    text-shadow: 0px 0px 0px rgba(178, 16, 16, 0.2);
-  }
-  50% {
-    text-shadow: 0px 0px 20px #b21010;
-  }
-  to {
-    text-shadow: 0px 0px 0px rgba(178, 16, 16, 0.2);
-  }
-}
-
-@keyframes lum {
-  from {
-    text-shadow: 0px 0px 0px rgba(178, 16, 16, 0.2);
-  }
-  50% {
-    text-shadow: 0px 0px 20px #b21010;
-  }
-  to {
-    text-shadow: 0px 0px 0px rgba(178, 16, 16, 0.2);
-  }
+@import url("https://fonts.googleapis.com/css?family=Shadows+Into+Light");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
   background-color: #ececec;
+  font-family: 'Shadows Into Light', cursive;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
 }
 
 .header {
   background-color: #fff;
+  -webkit-box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.5);
 }
 
 .header-wrap {
-  height: 50px;
+  height: 38px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -46,20 +36,18 @@ body {
 }
 
 .header-logo {
-  font-size: 24px;
+  font-size: 40px;
+  padding-left: 40px;
 }
 
 .header-logo a {
   text-decoration: none;
   color: #000;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
 }
 
 .header-logo a:hover {
-  -webkit-animation: lum 2s infinite;
-          animation: lum 2s infinite;
-  color: #b21010;
+  color: #850707fa;
+  font-weight: bold;
 }
 
 .header-nav {
@@ -75,22 +63,126 @@ body {
           justify-content: flex-end;
 }
 
-.header-nav ul li:not(:last-child) {
+.header-nav ul li {
   padding-right: 20px;
 }
 
 .header-nav ul a {
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
   text-transform: lowercase;
   text-decoration: none;
   color: #000;
-  font-size: 18px;
+  font-size: 24px;
 }
 
 .header-nav ul a:hover {
-  -webkit-animation: lum 2s infinite;
-          animation: lum 2s infinite;
-  color: #b21010;
+  color: #0317af;
+  font-weight: bold;
+}
+
+.calculator__block {
+  -webkit-box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.5);
+  margin: 50px 100px;
+  height: 500px;
+  width: 500px;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 10px;
+}
+
+.calculator__display input {
+  width: 100%;
+  border: 1px solid;
+  height: 150px;
+  background-color: #ececec;
+  font-size: 100px;
+  padding: 0px 10px 12px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  text-align: right;
+  font-family: 'Shadows Into Light', cursive;
+}
+
+.calculator__operations--top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin-bottom: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.calculator__operations--top .calculator__operation {
+  cursor: pointer;
+  font-size: 30px;
+  padding-top: 5px;
+  text-align: center;
+  width: 75px;
+}
+
+.calculator__operations--top .calculator__operation:hover {
+  font-weight: bold;
+}
+
+.calculator__operations--top .calculator__operation:nth-child(1):hover {
+  background: #b306063d;
+}
+
+.calculator__operations--side .calculator__operation {
+  padding: 0;
+  margin-bottom: 10px;
+  font-size: 50px;
+  text-align: center;
+  width: 95px;
+  height: 60px;
+}
+
+.calculator__operations--side .calculator__operation:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.calculator__operations--side .calculator__operation:nth-child(3) {
+  font-size: 100px;
+  margin: 0;
+  height: 130px;
+}
+
+.calculator__operation {
+  width: 50px;
+  height: 40px;
+  display: inline-block;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.calculator__numbers {
+  width: 385px;
+  float: left;
+  height: 100%;
+  display: inline-block;
+}
+
+.calculator__number {
+  cursor: pointer;
+  width: 120px;
+  font-size: 25px;
+  font-size: 60px;
+  height: 60px;
+  text-align: center;
+  margin-bottom: 10px;
+  display: inline-block;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.calculator__number:hover {
+  font-weight: bold;
+}
+
+.calculator__number:nth-child(10) {
+  width: 248px;
 }
 /*# sourceMappingURL=main.css.map */
