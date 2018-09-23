@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
 *{
     box-sizing: border-box;
+    
 }
 body{
     background-color: #ececec;
     font-family: 'Shadows Into Light', cursive;
+    color: #333;
 }
 .container{
     max-width: 1140px;
@@ -23,14 +25,14 @@ body{
         align-items: center;
     }
     &-logo{
-        font-size: 40px;
+        font-size: 70px;
+        padding-top: 15px;
         padding-left: 40px;
        
         a{
             text-decoration: none;
             color: #000;
             &:hover{
-                color: #850707fa;
                 font-weight: bold;
             }
         }
@@ -46,40 +48,92 @@ body{
             }
             a{
                 &:hover{
-                    color: #0317af;
                     font-weight: bold;
                 }
                 text-transform: lowercase;
                 text-decoration: none;
                 color: #000;
-                font-size: 24px;
+                font-size: 26px;
             }
         }
     }
 }
 .calculator{
+    &__body{
+    display: flex;
+    justify-content: space-around;
+    }
+    h1{
+        width: 100%;
+        text-align: center;
+        font-size: 70px;
+        margin-top: 30px
+    }
     &__block{
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
         box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.5);
-        margin: 50px 100px;
-        height: 500px;
-        width: 500px;
+        margin: 30px 0 50px 0;
+        max-width: 500px;
         border-radius: 5px;
         background-color: #fff;
         padding: 10px;
+        position: relative;
+        &:hover{
+            .btn__open--tip{
+                opacity: 1;
+            }
+        }
     }
     &__display{
+        position: relative;
         input{
             width: 100%;
             border: 1px solid;
-            height: 150px;
-            background-color: #ececec;
-            font-size: 100px;
-            padding: 0px 10px 12px;
+            border-top: 0;
+            height: 60px;
+            background-color: #333;
+            color: #fff;
+            font-size: 60px;
+            padding-right: 10px;
             margin-bottom: 10px;
             border-radius: 5px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
             text-align: right;
             font-family: 'Shadows Into Light', cursive;
+            &:nth-child(1){
+                height: 50px;
+                margin: 0;
+                font-size: 30px;
+                text-align: left;
+                border-bottom: 0;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+            }
         }
+    }
+    .btn__open--tip{
+        position: absolute;
+        cursor: pointer;
+        top: 20px;
+        width: 15px;
+        font-size: 25px;
+        z-index: 10;
+        height: 30px;
+        font-weight: bold;
+        text-align: center;
+        right: 16px;
+        color: #fff;
+    }
+    &__buttons{
+        display: flex;
+        flex-wrap: wrap;
     }
     &__operations{
         &--top{
@@ -94,16 +148,29 @@ body{
                 text-align: center;
                 width: 75px;
                 &:hover{
-                    font-weight: bold;
+                    background: #7c7c7c3d;
                 }
                 &:nth-child(1){
                    &:hover{
-                    background: #b306063d;
+                    background: #ff0000;
                    } 
                 }
+                &:nth-child(2){
+                    &:hover{
+                     background: #ff0000;
+                    } 
+                 }
+                 
+                &:nth-child(5){
+                    font-size: 40px;
+                    padding: 0;
+                }
+                 
             }  
         }
         &--side{
+            display: flex;
+            flex-direction: column;
             .calculator__operation{
                 padding: 0;
                 margin-bottom: 10px;
@@ -112,13 +179,16 @@ body{
                 width: 95px;
                 height: 60px;
                 &:hover{
+                    background: #7c7c7c3d;
                     cursor: pointer;
-                    font-weight: bold;
                 }
-            &:nth-child(3){
-                font-size: 100px;
+                &:nth-child(3){
+                    font-size: 100px;
                     margin: 0;
                     height: 130px;
+                    &:hover{
+                        background: #0045ff99;
+                    }
                 }
             }
         }
@@ -132,14 +202,13 @@ body{
     }
     &__numbers{
         width: 385px;
-        float: left;
         height: 100%;
         display: inline-block;
     }
     &__number{
         cursor: pointer;
         &:hover{
-            font-weight: bold;
+            background: #7c7c7c3d;
         }
         width: 120px;
         font-size: 25px;
@@ -155,4 +224,56 @@ body{
         }
     }
 
+}
+.calculator__tip{
+    margin-top: 55px;
+    max-width: 350px;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.5);
+    background: #fff;
+    border-radius: 5px;
+    position: absolute;
+    padding: 20px;
+    opacity: 0;
+    left: -2000px;
+    
+    .btn__close--tip{
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        right: 10px;
+        top: 10px;
+        &:hover{
+            cursor: pointer;
+            div{
+                height: 4px;
+            }
+        }
+        div{
+            position: absolute;
+            height: 3px;
+            border-radius: 50px;
+            width: 30px;
+            top: 15px;
+            background-color: #333;
+            transform: rotate(45deg);
+            &:nth-child(2){
+                transform: rotate(-45deg);
+            }
+        }
+    }
+    h2{ 
+        font-size: 50px;
+        text-align: center;
+        font-weight: bold;
+        padding-bottom: 30px;
+    }
+    p{
+        font-size: 20px;
+        padding-left: 10px;
+        padding-bottom: 8px;
+        span{
+            font-weight: bold;
+            font-size: 28px;
+        }
+    }
 }

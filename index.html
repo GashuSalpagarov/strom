@@ -24,43 +24,65 @@
     <section class="portfolio">
         <div class="container">
             <div class="calculator">
-                <div class="calculator__block">
-                    <div class="calculator__display">
-                        <input type="text" placeholder="0000000000" disabled>
-                    </div>
-                    <div class="calculator__buttons">
-                        <div class="calculator__operations calculator__operations--top">
-                            <div class="calculator__operation">C</div>
-                            <div class="calculator__operation">CE</div>
-                            <div class="calculator__operation">sqrt</div>
-                            <div class="calculator__operation">^</div>
-                            <div class="calculator__operation">/</div>
-                            <div class="calculator__operation">*</div>
-                        </div>
-                        <div class="calculator__numbers">
-                            <div class="calculator__number">1</div>
-                            <div class="calculator__number">2</div>
-                            <div class="calculator__number">3</div>
-                            <div class="calculator__number">4</div>
-                            <div class="calculator__number">5</div>
-                            <div class="calculator__number">6</div>
-                            <div class="calculator__number">7</div>
-                            <div class="calculator__number">8</div>
-                            <div class="calculator__number">9</div>
-                            <div class="calculator__number">O</div>
-                            <div class="calculator__number">.</div>
-                    </div>
-                    <div class="calculator__operations calculator__operations--side">
-                        <div class="calculator__operation">-</div>
-                        <div class="calculator__operation">+</div>
-                        <div class="calculator__operation">=</div>
-                    </div>
-                        
-                    </div>
+                <h1>Calculator</h1>
+                <div class="calculator__body">
+                        <div class="calculator__block">
+                                <div class="btn__open--tip">?</div>
+                                <div class="calculator__display">
+                                    <input type="text" id="history" value="" placeholder="" disabled>
+                                    <input type="text" id="display" value="0" placeholder="" disabled>
+                                </div>
+                                <div class="calculator__buttons">
+                                    <div class="calculator__operations calculator__operations--top">
+                                        <div class="calculator__operation clear__btn" id="ce">CE</div>
+                                        <div class="calculator__operation clear__btn" id="c">C</div>
+                                        <div class="calculator__operation " id="sqrt">sqrt</div>
+                                        <div class="calculator__operation ">^</div>
+                                        <div class="calculator__operation operation">/</div>
+                                        <div class="calculator__operation operation">*</div>
+                                    </div>
+                                    <div class="calculator__numbers">
+                                        <div class="calculator__number number">1</div>
+                                        <div class="calculator__number number">2</div>
+                                        <div class="calculator__number number">3</div>
+                                        <div class="calculator__number number">4</div>
+                                        <div class="calculator__number number">5</div>
+                                        <div class="calculator__number number">6</div>
+                                        <div class="calculator__number number">7</div>
+                                        <div class="calculator__number number">8</div>
+                                        <div class="calculator__number number">9</div>
+                                        <div class="calculator__number number">O</div>
+                                        <div class="calculator__number " id="decimal">.</div>
+                                </div>
+                                <div class="calculator__operations calculator__operations--side">
+                                    <div class="calculator__operation operation">-</div>
+                                    <div class="calculator__operation operation">+</div>
+                                    <div class="calculator__operation operation" id="result">=</div>
+                                </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="calculator__tip">
+                                <div class="btn__close--tip">
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <h2>Tip</h2>
+                                <p><span>C</span> - clear all</p>
+                                <p><span>CE</span> - clear the last number</p>
+                                <p><span>sqrt</span> - square root of the number</p>
+                                <p><span>^</span> - raises a number to the degree</p>
+                                <p><span>/</span> - divides the number </p>
+                                <p><span>*</span> - multiplies the number</p>
+                                <p><span>-</span> - takes from number</p>
+                                <p><span>+</span> - to add to the number</p>
+                                <p><span>=</span> - outputs the result</p>
+                            </div>
                 </div>
+                
             </div>
         </div>
     </section>
-<script src="/js/script.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
